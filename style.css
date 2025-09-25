@@ -1,118 +1,124 @@
 html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensure consistent box model */
+    box-sizing: border-box;
 }
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: transparent; /* Inherit background from html */
+    background: transparent;
+    font-size: 16px;
+    line-height: 1.5;
 }
+
+/* Header and Navigation */
 header {
     background: #222;
     color: #fff;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
 }
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
+
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.2s;
+    padding: 8px 12px;
+    display: block;
 }
+
 nav ul li a:hover {
     color: #aaa;
 }
+
+/* Main content area */
+main {
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero image */
 img.hero {
     width: 100%;
-    max-width: 600px;      /* Limit the maximum width */
+    max-width: 600px;
     height: auto;
     display: block;
-    max-height: 50vh;      /* Limit the maximum height to 50% of viewport */
+    max-height: 50vh;
     object-fit: cover;
     object-position: center;
-    margin: 24px auto 0 auto;
-    background-color: black;
-    box-shadow: none;
-    border: none;
+    margin: 20px auto;
 }
 
 img.hero:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
-img.hero:active {
-    transform: scale(1);
-    transition: transform 0.3s ease;
-}
 
-summary {
-    background: #444;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 20px 0;
-    font-size: 1.2em;
-    text-align: center;
-    transition: background 0.3s;
-}
-
+/* Image row */
 .image-row {
     display: flex;
     justify-content: center;
-    align-items: stretch; /* Stretch images to fill the container vertically */
-    gap: 32px;
-    margin: 32px 0;
-    height: 40vh; /* Set a fixed height for the row */
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
 }
+
 .image-row img {
-    width: 100%;
-    max-width: 180px;     /* Limit the maximum width */
+    max-width: 150px;
     height: auto;
-    object-fit: cover;    /* Fill the box, cropping if needed */
-    display: block;
-    margin: 0;
+    object-fit: cover;
+    flex: 1;
+    min-width: 120px;
 }
 
 .center-image.hero {
-    width: 100%;
-    max-width: 400px;
-    height: 100%;         /* Expand vertically */
-    max-height: 100%;
-    object-fit: cover;
-    display: block;
-    margin: 0;
+    max-width: 300px;
+    height: auto;
 }
 
 .side-image {
-    width: 100%;
-    max-width: 180px;
-    height: 100%;         /* Expand vertically */
-    max-height: 100%;
-    object-fit: cover;    /* Fill the box, cropping if needed */
-    display: block;
+    max-width: 120px;
+    height: auto;
 }
+
 .side-image:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
-.side-image:active {
-    transform: scale(1);
-    transition: transform 0.3s ease;
+
+/* Summary section */
+summary {
+    background: #444;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    font-size: 1.1em;
+    text-align: center;
 }
 
-/* Only apply black background to home.html */
-body.home-page, html.home-page {
-    background: #000 !important;
+/* Tables */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
 }
 
 table {
@@ -121,119 +127,243 @@ table {
     margin: 20px 0;
     border: #fff 1px solid;
     color: azure;
+    min-width: 600px;
 }
+
 th, td {
-    padding: 10px;
+    padding: 12px 8px;
     text-align: left;
     border: #fff 1px solid;
+    font-size: 14px;
 }
 
 th {
     background: #444;
+    position: sticky;
+    left: 0;
 }
+
 td {
     background: #333;
 }
 
-models-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 1200px; /* Limit the maximum width */
-    width: 100%;
-    height: 100vh; /* Full height */
-    overflow: auto; /* Allow scrolling if content overflows */
-    background: #000; /* Black background */
-    color: #fff; /* White text */
-    font-family: Arial, sans-serif;
-    font-size: 16px; /* Default font size */
-    line-height: 1.5; /* Line height for readability */
-    background-color: #000; /* Black background */
-}
-
-/* Light gray background for the models page */
-body.models-page, html.models-page {
-    background: #0f0d0d;
-}
-
-.models-page table,
-.models-page th,
-.models-page td {
-    border: none !important;
-    box-shadow: none !important;
+/* Headings */
+h1 {
+    font-size: 2em;
+    margin: 15px 0;
+    text-align: center;
 }
 
 h2 {
     color: #fff;
     text-align: center;
     margin: 20px 0;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: color 0.3s;
     background-color: #333;
-    padding: 10px;
+    padding: 12px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Change background color for the services page */
-body.services-page, html.services-page {
-    background: #222 !important;
-    color: #fff !important;
-    font-family: Arial, sans-serif !important;
-    font-size: 16px !important; /* Default font size */
-    line-height: 1.5 !important; /* Line height for readability */
+/* Lists */
+ul, ol {
+    padding-left: 20px;
+    margin: 15px 0;
 }
 
-body.about-page, html.about-page {
-    background: #222 !important;
-    color: #fff !important;
-    font-family: Arial, sans-serif !important;
-    font-size: 16px !important; /* Default font size */
-    line-height: 1.5 !important; /* Line height for readability */
+li {
+    margin-bottom: 8px;
 }
 
-/* Add to style.css */
+/* Gallery */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
     background: #111;
 }
 
 .gallery-grid img {
     width: 100%;
-    height: 220px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    background: #222;
 }
 
-html.contact-page,body.contact-page {
+/* Page-specific backgrounds */
+body.home-page, html.home-page {
+    background: #000 !important;
+}
+
+body.models-page, html.models-page {
+    background: #0f0d0d !important;
+}
+
+body.services-page, html.services-page {
     background: #222 !important;
     color: #fff !important;
-    font-family: Arial, sans-serif !important;
-    font-size: 16px !important; /* Default font size */
-    line-height: 1.5 !important; /* Line height for readability */
-
 }
 
-html.contact-page a, 
-body.contact-page a {
-    color: #4da6ff !important; /* Light blue */
-    text-decoration: underline;
+body.about-page, html.about-page {
+    background: #222 !important;
+    color: #fff !important;
+}
+
+body.contact-page, html.contact-page {
+    background: #222 !important;
+    color: #fff !important;
+}
+
+/* Links */
+a {
+    color: #4da6ff;
+    text-decoration: none;
     transition: color 0.2s;
 }
 
-html.contact-page a:hover, 
-body.contact-page a:hover {
-    color: #82cfff !important; /* Even lighter blue on hover */
+a:hover {
+    color: #82cfff;
 }
+
+/* Discontinued label */
+.discontinued {
+    color: #ff6b6b;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    header {
+        padding: 10px 0;
+    }
+    
+    nav ul {
+        gap: 8px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        padding: 10px;
+        border-bottom: 1px solid #444;
+    }
+    
+    h1 {
+        font-size: 1.6em;
+        margin: 10px 0;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+        padding: 10px;
+        margin: 15px 0;
+    }
+    
+    .image-row {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+    }
+    
+    .image-row img {
+        max-width: 100%;
+        min-width: auto;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .gallery-grid img {
+        height: 150px;
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 8px 6px;
+    }
+    
+    main {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    
+    h1 {
+        font-size: 1.4em;
+    }
+    
+    h2 {
+        font-size: 1.2em;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .gallery-grid img {
+        height: 120px;
+    }
+    
+    nav ul li a {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+    
+    table {
+        min-width: 400px;
+    }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+    .side-image:hover,
+    img.hero:hover {
+        transform: none;
+    }
+    
+    nav ul li a:hover {
+        color: #fff;
+    }
+    
+    nav ul li a:active {
+        background-color: #444;
+    }
+}
+
+/* Ensure proper viewport scaling */
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
